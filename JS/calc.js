@@ -2,19 +2,7 @@ window.onload = function (){
     var buttons = document.getElementsByTagName('button');
     var screen = document.querySelectorAll(' h2')[0];
     for (var i=0; i<buttons.length; i++) {
-        if (buttons[i].innerHTML == '+') {
-            buttons[i].addEventListener('click',printScreen(buttons[i].innerHTML));
-        }
-        else if (buttons[i].innerHTML == '-') {
-            buttons[i].addEventListener('click',printScreen(buttons[i].innerHTML));
-        }
-        else if (buttons[i].innerHTML == '/') {
-            buttons[i].addEventListener('click',printScreen(buttons[i].innerHTML));
-        }
-        else if (buttons[i].innerHTML == '*') {
-            buttons[i].addEventListener('click',printScreen(buttons[i].innerHTML));
-        }
-        else if (buttons[i].innerHTML == 'AC') {
+         if (buttons[i].innerHTML == 'AC') {
             buttons[i].addEventListener('click',clearScreen());
         }
         else if (buttons[i].innerHTML == '=') {
