@@ -1,26 +1,27 @@
 window.onload = function (){
     var buttons = document.getElementsByTagName('button');
-    var screen = document.querySelectorAll(' h2')[0];
-    for (var i=0; i<buttons.length; i++) {
-         if (buttons[i].innerHTML == 'AC') {
-            buttons[i].addEventListener('click',clearScreen());
+    var screen = document.querySelectorAll('h2')[0];
+    for (var button of buttons){
+        if (button.innerHTML == 'AC') {
+            button.addEventListener('click',clearScreen());
         }
-        else if (buttons[i].innerHTML == '=') {
-            buttons[i].addEventListener('click',calculate());
+        else if (button.innerHTML == '=') {
+            button.addEventListener('click',calculate());
         }
         else {
-            buttons[i].addEventListener('click',printScreen(buttons[i].innerHTML));
+            button.addEventListener('click',printScreen(button.innerHTML));
         }
     }
 
     function printScreen(string) {
         return function() {
+            if (screen.innerHTML == '0.00') {screen.innerHTML = '';}
             screen.innerHTML += string;
         }
     }
 	function clearScreen() {
         return function() {
-            screen.innerHTML = "";
+            screen.innerHTML = '0.00';
         };
     }
     function calculate() {
